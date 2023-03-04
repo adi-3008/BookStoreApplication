@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Book Store</string>
+    <string name="book_title">Book Title:</string>
+    <string name="author_name">Author Name:</string>
+    <string name="pages">Pages:</string>
+    <string name="isbn">ISBN:</string>
+    <string name="year_published">Year Published:</string>
+    <string name="publisher">Publisher:</string>
+    <string name="genres">Genres:</string>
+    <string name="original_language">Original Language:</string>
+    <string name="description">Description:</string>
+    <string name="subject">Subject:</string>
+</resources>

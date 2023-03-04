@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="marginTop">16dp</dimen>
+    <dimen name="textSize">17sp</dimen>
+    <dimen name="max_width_constraint">270dp</dimen>
+    <dimen name="margin_start">10dp</dimen>
+
+</resources>
