@@ -1,6 +1,6 @@
 # BookStoreApplication
 
-**"I have created a Book Store Application that follows the MVVM Architecture for its working. It contains the following three layers: view layer, viewmodel, and model. The packages are:**
+**"I have created a Book Store Application that follows the MVVM Architecture for its working. It contains the following three layers: view layer, viewmodel layer, and model layer. The packages are:**
 
 **api**: To fetch data from the URL https://run.mocky.io/v3/b07fca4a-01e0-4000-985d-8baa538dee35. It contains a list of books with information like title, author, pages, etc.
 
