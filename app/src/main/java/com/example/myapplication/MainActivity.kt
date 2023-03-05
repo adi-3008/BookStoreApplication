@@ -13,7 +13,7 @@ import com.example.myapplication.viewmodel.ViewModelFactory
 class MainActivity : AppCompatActivity() {
     private var binding : ActivityMainBinding? = null
 
-    lateinit var bookViewModel: BookViewModel
+    private lateinit var bookViewModel: BookViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)

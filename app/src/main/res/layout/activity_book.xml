@@ -30,6 +30,7 @@
                 android:layout_height="200dp"
                 android:scaleType="fitStart"
                 imageFromUrl="@{bookViewModel.bookList.get(pos).image_url}"
+                android:contentDescription="@string/book_image"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
