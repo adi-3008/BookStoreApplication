@@ -33,8 +33,6 @@ class MainActivity : AppCompatActivity() {
             adapter.notifyDataSetChanged()
         }
 
-        bookViewModel.getBooks()
-
     }
 
     override fun onDestroy() {

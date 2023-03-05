@@ -36,7 +36,6 @@ class BookActivity : AppCompatActivity() {
         bookViewModel.bookList.observe(this){
             supportActionBar?.title = it[pos].title
         }
-        bookViewModel.getBooks()
 
     }
 }
