@@ -10,8 +10,9 @@ import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.SocketTimeoutException
 import java.net.URL
+import javax.inject.Inject
 
-class Data : DataSourceInterface{
+class Data @Inject constructor(): DataSourceInterface{
     private val gson = Gson()
 
     override suspend fun getBooks(): List<Book> = withContext(Dispatchers.IO) {
