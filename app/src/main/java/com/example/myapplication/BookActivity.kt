@@ -4,10 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import com.example.myapplication.api.Data
-import com.example.myapplication.api.DataSourceInterface
 import com.example.myapplication.databinding.ActivityBookBinding
-import com.example.myapplication.repository.BookRepository
 import com.example.myapplication.viewmodel.BookViewModel
 import com.example.myapplication.viewmodel.ViewModelFactory
 
@@ -23,9 +20,7 @@ class BookActivity : AppCompatActivity() {
 
         val pos = intent.getIntExtra("pos", 0)
 
-        val data : DataSourceInterface = Data()
-
-        val bookRepository = BookRepository(data)
+        val bookRepository = (application as MainApplication).bookRepository
 
         bookViewModel = ViewModelProvider(this, ViewModelFactory(bookRepository))[BookViewModel::class.java]
 

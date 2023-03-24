@@ -3,28 +3,24 @@ package com.example.myapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
-import com.example.myapplication.api.Data
-import com.example.myapplication.api.DataSourceInterface
 import com.example.myapplication.databinding.ActivityMainBinding
-import com.example.myapplication.repository.BookRepository
 import com.example.myapplication.viewmodel.BookViewModel
 import com.example.myapplication.viewmodel.ViewModelFactory
 
 class MainActivity : AppCompatActivity() {
-    private var binding : ActivityMainBinding? = null
+    private lateinit var binding : ActivityMainBinding
 
     private lateinit var bookViewModel: BookViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding?.root)
+        setContentView(binding.root)
 
         val adapter = MainAdapter()
-        binding?.taskRV?.adapter = adapter
+        binding.taskRV.adapter = adapter
 
-        val data : DataSourceInterface = Data()
-
-        val bookRepository = BookRepository(data)
+        val bookRepository = (application as MainApplication).bookRepository
 
         bookViewModel = ViewModelProvider(this, ViewModelFactory(bookRepository))[BookViewModel::class.java]
 
@@ -32,11 +28,5 @@ class MainActivity : AppCompatActivity() {
             adapter.bookList = books
             adapter.notifyDataSetChanged()
         }
-
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        binding = null
     }
 }

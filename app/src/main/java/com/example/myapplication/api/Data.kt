@@ -16,7 +16,6 @@ class Data : DataSourceInterface{
 
     override suspend fun getBooks(): List<Book> = withContext(Dispatchers.IO) {
         var result: String
-
         // establish a connection
         var connection: HttpURLConnection? = null
 
@@ -65,7 +64,7 @@ class Data : DataSourceInterface{
             // disconnect the connection
             connection?.disconnect()
         }
-        
-        return@withContext gson.fromJson(result, Array<Book>::class.java).toList()
+
+        gson.fromJson(result, Array<Book>::class.java).toList()
     }
 }
