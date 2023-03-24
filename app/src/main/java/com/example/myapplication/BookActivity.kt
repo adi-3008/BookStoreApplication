@@ -7,7 +7,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication.databinding.ActivityBookBinding
 import com.example.myapplication.viewmodel.BookViewModel
 import com.example.myapplication.viewmodel.ViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class BookActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityBookBinding
