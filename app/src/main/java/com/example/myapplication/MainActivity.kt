@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.viewmodel.BookViewModel
-import com.example.myapplication.viewmodel.ViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -22,9 +21,7 @@ class MainActivity : AppCompatActivity() {
         val adapter = MainAdapter()
         binding.taskRV.adapter = adapter
 
-        val bookRepository = (application as MainApplication).bookRepository
-
-        bookViewModel = ViewModelProvider(this, ViewModelFactory(bookRepository))[BookViewModel::class.java]
+        bookViewModel = ViewModelProvider(this)[BookViewModel::class.java]
 
         bookViewModel.bookList.observe(this) { books ->
             adapter.bookList = books

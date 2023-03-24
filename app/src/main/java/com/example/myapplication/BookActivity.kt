@@ -6,7 +6,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication.databinding.ActivityBookBinding
 import com.example.myapplication.viewmodel.BookViewModel
-import com.example.myapplication.viewmodel.ViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -22,9 +21,7 @@ class BookActivity : AppCompatActivity() {
 
         val pos = intent.getIntExtra("pos", 0)
 
-        val bookRepository = (application as MainApplication).bookRepository
-
-        bookViewModel = ViewModelProvider(this, ViewModelFactory(bookRepository))[BookViewModel::class.java]
+        bookViewModel = ViewModelProvider(this)[BookViewModel::class.java]
 
         binding.bookViewModel = bookViewModel
         binding.pos = pos

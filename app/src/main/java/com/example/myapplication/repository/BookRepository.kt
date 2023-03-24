@@ -12,7 +12,25 @@ class BookRepository @Inject constructor(private var dataSource: DataSourceInter
     val bookList: LiveData<List<Book>> get() = _bookList
 
     suspend fun getBooks(){
+        if (DataCache.getBooks() != null){
+            _bookList.value = DataCache.getBooks()
+            return
+        }
         _bookList.value = dataSource.getBooks()
+        DataCache.setBooks(_bookList.value!!)
     }
 }
+
+object DataCache{
+    private var bookList : List<Book>? = null
+
+    fun setBooks(bookList: List<Book>){
+        this.bookList = bookList
+    }
+
+    fun getBooks() : List<Book>?{
+        return bookList
+    }
+}
+
 

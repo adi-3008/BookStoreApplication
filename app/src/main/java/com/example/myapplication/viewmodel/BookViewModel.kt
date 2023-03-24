@@ -5,10 +5,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.myapplication.model.Book
 import com.example.myapplication.repository.BookRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class BookViewModel (private val bookRepository: BookRepository): ViewModel() {
+@HiltViewModel
+class BookViewModel @Inject constructor (private val bookRepository: BookRepository): ViewModel() {
 
     val bookList: LiveData<List<Book>> get() = bookRepository.bookList
 
